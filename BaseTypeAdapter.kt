@@ -5,8 +5,8 @@ abstract class BaseTypeAdapter<T>(protected var context: Context, protected var 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-          val viewHolder = ViewHolder.get(context, parent, mLayoutList[viewType])
-           return viewHolder
+        val viewHolder = ViewHolder.get(context, parent, mLayoutList[viewType])
+        return viewHolder
     }
     override fun getItemViewType(position: Int): Int {
         if(mTypeState!!.size>0)
@@ -15,7 +15,7 @@ abstract class BaseTypeAdapter<T>(protected var context: Context, protected var 
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if(mTypeState!!.size>0)
-              convert(holder, position, infoList[position],mTypeState!![position])
+            convert(holder, position, infoList[position],mTypeState!![position])
     }
 
     abstract fun convert(holder: ViewHolder, position: Int, t: T,type:Int)

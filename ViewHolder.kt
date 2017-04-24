@@ -8,13 +8,6 @@ class ViewHolder(private val mContext: Context, private val mConvertView: View, 
     init {
         mViews = SparseArray<View>()
     }
-    /**
-     * 通过viewId获取控件
-
-     * @param viewId
-     * *
-     * @return
-     */
     fun <T : View> getView(viewId: Int): T {
         var view: View? = mViews.get(viewId)
         if (view == null) {
@@ -40,10 +33,10 @@ class ViewHolder(private val mContext: Context, private val mConvertView: View, 
     }
     fun pic(block:ViewHolder.()->Unit){
         block()
-            val view = getView<ImageView>(id)
-            Glide.with(mContext)
-                    .load(url)
-                    .into(view)
+        val view = getView<ImageView>(id)
+        Glide.with(mContext)
+                .load(url)
+                .into(view)
     }
     fun text(block:ViewHolder.()->Unit){
         block()
@@ -64,7 +57,7 @@ class ViewHolder(private val mContext: Context, private val mConvertView: View, 
     }
 
     fun  <T:View> click(viewId:Int,C:()->Unit){
-         val view = getView<T>(viewId)
+        val view = getView<T>(viewId)
         view.setOnClickListener {
             C()
         }
