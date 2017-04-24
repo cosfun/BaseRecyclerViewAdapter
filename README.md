@@ -1,5 +1,5 @@
 # BaseRecyclerViewAdapter
-a android recyclerview adapter
+android recyclerview adapter
 
 **use like**
 
